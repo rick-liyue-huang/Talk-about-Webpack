@@ -1,0 +1,25 @@
+{
+  "name": "Talk-about-Webpack",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rick-liyue-huang/Talk-about-Webpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rick-liyue-huang/Talk-about-Webpack/issues"
+  },
+  "homepage": "https://github.com/rick-liyue-huang/Talk-about-Webpack#readme",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
