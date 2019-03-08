@@ -6,6 +6,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
 
@@ -33,9 +34,15 @@ module.exports = {
 	/*mode: 'production',
 	devtool: 'cheap-module-source-map'*/
 
+	// use 'webpack-dev-server', and the produced 'dist' directory is in catch
 	devServer: {
 		contentBase: './dist',
+		// automatically open browsers
 		open: true,
+
+		// hot module replace func
+		hot: true,
+		hotOnly: true
 
 		/*proxy: {
 			'/api': 'http://localhost:3000/'
@@ -120,7 +127,9 @@ module.exports = {
 		}),
 
 		// clean the dist (output) directory before bundle
-		new CleanWebpackPlugin()
+		new CleanWebpackPlugin(),
+		// use Hot module replacement to keep the original style
+		new webpack.HotModuleReplacementPlugin()
 	]
 }
 

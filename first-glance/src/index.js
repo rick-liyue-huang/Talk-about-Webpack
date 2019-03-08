@@ -24,7 +24,33 @@
 // var root = document.getElementById('root');
 // root.innerHTML = '<div class="iconfont iconicon_add">abc</div>';
 
-console.log('ok----++!!');
+// console.log('ok----++!!');
+
+// import './style.css';
+
+// var btn = document.createElement('button');
+// btn.innerHTML = 'Add';
+// document.body.appendChild(btn);
+
+// btn.onclick = function() {
+// 	var div = document.createElement('div');
+// 	div.innerHTML = 'item';
+// 	document.body.appendChild(div);
+// }
+
+import counter from './counter';
+import number from './number';
+
+counter();
+number();
+
+if(module.hot) {
+	module.hot.accept('./number', () => {
+		document.body.removeChild(document.getElementById('number'));
+		number()
+	})
+}
+
 
 
 

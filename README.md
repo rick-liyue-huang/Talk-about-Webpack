@@ -85,7 +85,19 @@ run `"server": "node ./first-glance/src/server.js"` in 'package.json',
 
 and create 'server.js' file.
 
+hot module replacement:
 
+add `new webpack.HotModuleReplacementPlugin()` and add `hot: true, hotOnly: true` in devSever
+
+HMR also can deal with js, but need add some codes.
+
+```
+if(module.hot) {
+	module.hot.accept('xxx.js', () => {
+		
+		})
+}
+```
 
 
 
