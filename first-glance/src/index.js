@@ -24,7 +24,7 @@
 // var root = document.getElementById('root');
 // root.innerHTML = '<div class="iconfont iconicon_add">abc</div>';
 
-console.logs('ok');
+console.log('ok----++!!');
 
 
 

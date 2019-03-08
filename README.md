@@ -69,6 +69,22 @@ mode: 'development' - devtool: 'cheap-module-eval-source-map'
 mode: 'production' - devtool: 'cheap-module-source-map'
 
 
+let the webpack watch the source code changes.
+method 1: "watch": "npx webpack --config webpack.config.js --watch"
+
+method 2:
+run `"start": "webpack-dev-server"` in 'package.json',
+and add 
+`devServer: {
+	contentBase: './dist',
+	open: true
+	} ` in 'webpack.config.js'
+
+method 3: 
+run `"server": "node ./first-glance/src/server.js"` in 'package.json',
+
+and create 'server.js' file.
+
 
 
 

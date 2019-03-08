@@ -22,6 +22,7 @@ module.exports = {
 // when put the static files in cdn, we need to config this 
 // <script type="text/javascript" src="http://cdn.com.cn/main.js">
 		// publicPath: 'http://cdn.com.cn'
+		publicPath: '/'
 	},
 
 // remember the mode and devtool(source-map)
@@ -31,6 +32,16 @@ module.exports = {
 
 	/*mode: 'production',
 	devtool: 'cheap-module-source-map'*/
+
+	devServer: {
+		contentBase: './dist',
+		open: true,
+
+		/*proxy: {
+			'/api': 'http://localhost:3000/'
+		}*/
+	},
+
 
 	module: {
 		rules: [
