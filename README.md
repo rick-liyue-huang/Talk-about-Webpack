@@ -25,7 +25,39 @@ Built at: 03/08/2019 10:11:18 AM
 bundle.js  1.05 KiB       0  [emitted]  main
 '
 
-"mode: 'production'" defaultly, or "mode: 'development'"
+"mode: 'production'" defaultly, or "mode: 'development'".
+
+
+### Modules
+
+used to deal with different files by loaders
+
+```module: {
+	rules: [{
+		test: /\.(jpg|png)$/,
+		loader: 'file-loader',
+		options: {
+			name: '[name]_[hash].[ext]',
+			outputPath: 'images/'
+		}
+	}]
+}
+```
+use 'url-loader' to replace 'file-loader' to deal with picture.
+
+'css-loader' deal with different .css files, and combine them.
+
+'style-loader' used to mount combined .css file on html/js.
+
+run `npm install sass-loader node-sass --save-dev` to deal with .scss file
+
+run `npm i --save-dev postcss-loader autoprefixer` to deal with the 'webkit' and create 'postcss.config.js' file and add 'autoprefixer'
+
+
+
+
+
+
 
 
 
