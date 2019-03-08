@@ -53,14 +53,31 @@
 
 // import "@babel/polyfill";
 
-const arr = [
-	new Promise(() => {}),
-	new Promise(() => {})
-];
+// const arr = [
+// 	new Promise(() => {}),
+// 	new Promise(() => {})
+// ];
 
-arr.map((item) => {
-	console.log(item);
-});
+// arr.map((item) => {
+// 	console.log(item);
+// });
+
+import "@babel/polyfill";
+
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends Component {
+	render() {
+		return(
+			<div>hello</div>
+		)
+	}
+} 
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
 
 
 
