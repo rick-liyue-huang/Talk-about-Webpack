@@ -55,6 +55,9 @@ run `npm i --save-dev postcss-loader autoprefixer` to deal with the 'webkit' and
 
 deal with fonts file by 'file-loader'
 
+对于loader，它就是一个转换器，将A文件进行编译形成B文件，这里操作的是文件，比如将A.scss或A.less转变为B.css，单纯的文件转换过程；
+
+对于plugin，它就是一个扩展器，它丰富了wepack本身，针对是loader结束后，webpack打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听webpack打包过程中的某些节点
 
 
 

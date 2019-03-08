@@ -4,16 +4,24 @@
 */
 
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
 
 	entry: {
-		main: './first-glance/src/index.js'
+		// bundle two entry files
+		main: './first-glance/src/index.js',
+		// sub: './first-glance/src/index.js'
 	},
 
 	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, './first-glance/dist')
+		// [name]: main or [name]: sub
+		filename: '[name].js',
+		path: path.resolve(__dirname, './first-glance/dist'),
+// when put the static files in cdn, we need to config this 
+// <script type="text/javascript" src="http://cdn.com.cn/main.js">
+		// publicPath: 'http://cdn.com.cn'
 	},
 
 	mode: 'development',
@@ -84,7 +92,19 @@ module.exports = {
 			}
 
 		]
-	}
+	},
+
+	// used to let webpack become more flexible,
+	// plugin can be acted as hooks, which will be effected on webpack bundling some time.
+	plugins: [
+	// create automatically index.html by template 'index.html'
+		new HtmlWebpackPlugin({
+			template: './first-glance/src/index.html'
+		}),
+
+		// clean the dist (output) directory before bundle
+		new CleanWebpackPlugin()
+	]
 }
 
 

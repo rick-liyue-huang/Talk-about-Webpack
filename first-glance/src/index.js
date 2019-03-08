@@ -19,11 +19,12 @@
 // console.log(avatar);
 // console.log(txt);
 
-import './iconfont.scss';
+// import './iconfont.scss';
 
-var root = document.getElementById('root');
-root.innerHTML = '<div class="iconfont iconicon_add">abc</div>';
+// var root = document.getElementById('root');
+// root.innerHTML = '<div class="iconfont iconicon_add">abc</div>';
 
+console.log('ok');
 
 
 
