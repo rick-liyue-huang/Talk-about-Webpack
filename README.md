@@ -53,6 +53,8 @@ run `npm install sass-loader node-sass --save-dev` to deal with .scss file
 
 run `npm i --save-dev postcss-loader autoprefixer` to deal with the 'webkit' and create 'postcss.config.js' file and add 'autoprefixer'
 
+deal with fonts file by 'file-loader'
+
 
 
 
