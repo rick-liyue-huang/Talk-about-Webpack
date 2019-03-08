@@ -38,18 +38,46 @@
 // 	document.body.appendChild(div);
 // }
 
-import counter from './counter';
-import number from './number';
+// import counter from './counter';
+// import number from './number';
 
-counter();
-number();
+// counter();
+// number();
 
-if(module.hot) {
-	module.hot.accept('./number', () => {
-		document.body.removeChild(document.getElementById('number'));
-		number()
-	})
-}
+// if(module.hot) {
+// 	module.hot.accept('./number', () => {
+// 		document.body.removeChild(document.getElementById('number'));
+// 		number()
+// 	})
+// }
+
+// import "@babel/polyfill";
+
+const arr = [
+	new Promise(() => {}),
+	new Promise(() => {})
+];
+
+arr.map((item) => {
+	console.log(item);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

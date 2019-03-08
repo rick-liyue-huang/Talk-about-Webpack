@@ -113,6 +113,19 @@ module.exports = {
 				use: {
 					loader: 'file-loader'
 				}
+			},
+
+			// deal with es6 by babel
+			{ 
+				test: /\.js$/, 
+				exclude: /node_modules/, 
+				use: {
+					loader: 'babel-loader',
+					options: {
+						// put contents in .babelrc
+					}
+				}
+				
 			}
 
 		]
@@ -132,6 +145,24 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin()
 	]
 }
+
+
+	// // for application
+	// presets: [['@babel/preset-env', {
+	// 	targets: {
+	// 		chrome: '67'
+	// 	},
+	// 	// decrease target code.
+	// 	useBuiltIns: 'usage'
+	// }]]
+	// // for framework
+	// /*"plugins": [["@babel/plugin-transform-runtime", {
+	// 	"corejs": 2,
+	// 	"helpers": true,
+	// 	"regenerator": true,
+	// 	"useESModules": false
+	// }]]*/
+
 
 
 

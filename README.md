@@ -94,10 +94,12 @@ HMR also can deal with js, but need add some codes.
 ```
 if(module.hot) {
 	module.hot.accept('xxx.js', () => {
-		
+
 		})
 }
 ```
+
+'babel-loader' is the bridge between babel and webpack. and '@babel/preset-env' deal with transfering from es6 to es5.
 
 
 
