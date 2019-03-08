@@ -59,6 +59,14 @@ deal with fonts file by 'file-loader'
 
 对于plugin，它就是一个扩展器，它丰富了wepack本身，针对是loader结束后，webpack打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听webpack打包过程中的某些节点
 
+source-map:
+is one mapping tool, can match source index.js to dist main.js
+
+remember that:
+
+mode: 'development' - devtool: 'cheap-module-eval-source-map'
+
+mode: 'production' - devtool: 'cheap-module-source-map'
 
 
 

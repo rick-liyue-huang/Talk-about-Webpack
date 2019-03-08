@@ -24,7 +24,13 @@ module.exports = {
 		// publicPath: 'http://cdn.com.cn'
 	},
 
+// remember the mode and devtool(source-map)
 	mode: 'development',
+	// source-map
+	devtool: 'cheap-module-eval-source-map',
+
+	/*mode: 'production',
+	devtool: 'cheap-module-source-map'*/
 
 	module: {
 		rules: [
