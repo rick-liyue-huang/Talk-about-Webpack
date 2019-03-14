@@ -114,6 +114,27 @@ for asynthic code
 
 splitchunks talk about
 
+lazy load -> import
+
+打包分析： preloading prefetching
+
+'"prod-analyze": "webpack --profile --json > stats.json"' in package.json
+
+and get 'stats.json' use 
+http://webpack.github.com/analyse to check.
+
+or use https://alexkuz.github.io/webpack-chart/ to upload stats.json
+
+npm install --save-dev webpack-bundle-analyzer to use as well
+
+command+shift+p to get coverage
+看代码使用率, so use lazy loading
+webpack hope to write async code
+
+import(/* webpackPrefetch: true */ 'LoginModal');
+
+import(/* webpackPreload: true */ 'ChartingLibrary');
+
 
 
 

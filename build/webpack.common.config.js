@@ -98,28 +98,28 @@ module.exports = {
       // chunks: 'async',
       chunks: 'all', // for sync
       // chunks: 'initial', for sync
-      minSize: 30000, // if bigger than minsize, it will get seperated file
-      maxSize: 0,
-      minChunks: 1, // min use imported file
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
-      cacheGroups: {
-        // vendors: false, // for async
-        // default: false // for async
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-          filename: 'vendors.js'
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
-          filename: 'common.js'
-        }
-      }
+      // minSize: 30000, // if bigger than minsize, it will get seperated file
+      // maxSize: 0,
+      // minChunks: 1, // min use imported file
+      // maxAsyncRequests: 5,
+      // maxInitialRequests: 3,
+      // automaticNameDelimiter: '~',
+      // name: true,
+      // cacheGroups: {
+      //   vendors: false, // for async
+      //   default: false // for async
+      //   // vendors: {
+      //   //   test: /[\\/]node_modules[\\/]/,
+      //   //   priority: -10,
+      //   //   filename: 'vendors.js'
+      //   // },
+      //   // default: {
+      //   //   minChunks: 2,
+      //   //   priority: -20,
+      //   //   reuseExistingChunk: true,
+      //   //   filename: 'common.js'
+      //   // }
+      // }
     }
 	}
 

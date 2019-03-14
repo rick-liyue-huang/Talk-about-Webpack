@@ -16,7 +16,8 @@
     "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
     "build": "webpack --config ./build/webpack.prod.config.js",
     "server": "node ./first-glance/src/server.js",
-    "dev-build": "npx webpack --config ./build/webpack.dev.config.js"
+    "dev-build": "npx webpack --config ./build/webpack.dev.config.js",
+    "prod-analyze": "webpack --profile --json > stats.json"
   },
   "repository": {
     "type": "git",

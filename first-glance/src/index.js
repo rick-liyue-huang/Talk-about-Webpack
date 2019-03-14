@@ -83,10 +83,9 @@
 
 // add(1,9);
 
-import _ from 'lodash';
+// import _ from 'lodash';
 
-console.log(_.join(['a', 'b', 'c'], '**'));
-
+// console.log(_.join(['a', 'b', 'c'], '**'));
 
 
 // function getComponent() {
@@ -97,9 +96,32 @@ console.log(_.join(['a', 'b', 'c'], '**'));
 // 	})
 // }
 
-// getComponent().then(element => {
-// 	document.body.appendChild(element);
-// });
+// async function getComponent() {
+// 	const {default: _} = await import(/*webpackChunkName:'lodash'*/ 'lodash');
+// 	const element = document.createElement('div');
+// 	element.innerHTML = _.join(['rick', 'huang'], '-');
+// 	return element;
+// }
+// lazy load
+// document.addEventListener('click', () => {
+// 	getComponent().then(element => {
+// 		document.body.appendChild(element);
+// 	});
+// })
+
+document.addEventListener('click', () => {
+	// const element = document.createElement('div');
+	// element.innerHTML = 'ok';
+	// document.body.appendChild(element);
+
+	// webpack prefer for prefetch
+	import(/* webpackPrefetch: true */ './click.js').then(({default: func}) => {
+		func();
+	})
+})
+
+
+
 
 
 
