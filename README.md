@@ -136,6 +136,15 @@ import(/* webpackPrefetch: true */ 'LoginModal');
 import(/* webpackPreload: true */ 'ChartingLibrary');
 
 
+run `npm install --save-dev mini-css-extract-plugin` to seperate css file use in production environment
+so put css and scss module in different file.
+
+'OptimizeCSSAssetsPlugin' for minimize css
+
+
+
+
+
 
 
 

@@ -10,6 +10,7 @@ module.exports = {
 
 	output: {
 		filename: '[name].js',
+		chunkFilename: '[name].chunk.js',
 		path: path.resolve(__dirname, '../first-glance/dist')
 	},
 
@@ -26,36 +27,6 @@ module.exports = {
 						outputPath: 'distImages/'
 					}
 				}
-			},
-
-			// deal with .css file
-			{
-				test: /\.css$/,
-				use: [
-				// secondly, mount combined .css file with .html file
-					'style-loader',
-				// firstly, combine different .css files.
-					'css-loader'
-				]
-			},
-			{
-				test: /\.scss$/,
-				use: [
-					'style-loader',
-					{
-						loader: 'css-loader',
-						options: {
-							// deal with nested .scss files in .scss file
-							importLoaders: 2,
-							// open css modules, to deal with .css on different file
-							// modules: true
-						}
-					},
-					// need to install 'sass-loader' and 'node-sass' to deal with .scss file
-					'sass-loader',
-					// need to create 'postcss.config.js' and require 'autoprefixer'
-					'postcss-loader'
-				]
 			},
 
 			{
@@ -94,6 +65,7 @@ module.exports = {
 	// 1. synchronous code splitting 
 	// 2. asynchronous code splitting add 'babel-plugin-dynamic-import-webpack' in .babelrc file
 	optimization: {
+		usedExports: true,
 		splitChunks: {
       // chunks: 'async',
       chunks: 'all', // for sync

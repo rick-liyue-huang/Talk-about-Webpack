@@ -102,23 +102,28 @@
 // 	element.innerHTML = _.join(['rick', 'huang'], '-');
 // 	return element;
 // }
-// lazy load
+// // lazy load
 // document.addEventListener('click', () => {
 // 	getComponent().then(element => {
 // 		document.body.appendChild(element);
 // 	});
 // })
 
-document.addEventListener('click', () => {
-	// const element = document.createElement('div');
-	// element.innerHTML = 'ok';
-	// document.body.appendChild(element);
+// document.addEventListener('click', () => {
+// 	// const element = document.createElement('div');
+// 	// element.innerHTML = 'ok';
+// 	// document.body.appendChild(element);
 
-	// webpack prefer for prefetch
-	import(/* webpackPrefetch: true */ './click.js').then(({default: func}) => {
-		func();
-	})
-})
+// 	// webpack prefer for prefetch
+// 	import(/* webpackPrefetch: true */ './click.js').then(({default: func}) => {
+// 		func();
+// 	})
+// })
+
+import './style.css';
+import './style1.css';
+
+console.log('hello');
 
 
 
