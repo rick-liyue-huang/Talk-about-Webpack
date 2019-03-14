@@ -62,22 +62,44 @@
 // 	console.log(item);
 // });
 
-import "@babel/polyfill";
+// import "@babel/polyfill";
 
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import React, { Component } from 'react';
+// import ReactDOM from 'react-dom';
 
-class App extends Component {
-	render() {
-		return(
-			<div>hello</div>
-		)
-	}
-} 
+// class App extends Component {
+// 	render() {
+// 		return(
+// 			<div>hello</div>
+// 		)
+// 	}
+// } 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App />, document.getElementById('root'));
 
 
+// tree shaking only support es module - static import
+// import { add } from './math';
+
+// add(1,9);
+
+import _ from 'lodash';
+
+console.log(_.join(['a', 'b', 'c'], '**'));
+
+
+
+// function getComponent() {
+// 	return import(/*webpackChunkName:'lodash'*/ 'lodash').then(({default: _}) => {
+// 		var element = document.createElement('div');
+// 		element.innerHTML = _.join(['rick', 'huang'], '-');
+// 		return element;
+// 	})
+// }
+
+// getComponent().then(element => {
+// 	document.body.appendChild(element);
+// });
 
 
 

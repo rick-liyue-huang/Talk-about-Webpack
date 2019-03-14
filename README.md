@@ -102,6 +102,18 @@ if(module.hot) {
 'babel-loader' is the bridge between babel and webpack. and '@babel/preset-env' deal with transfering from es6 to es5.
 
 
+'tree shaking' only support ES module, and only support mode of 'development'
+
+decompse to 'webpack.dev.config.js', 'webpack.prod.config.js', 'webpack.common.config.js'
+
+code splitting
+
+for asynthic code
+
+'babel-plugin-dynamic-import-webpack' in .babelrc file
+
+splitchunks talk about
+
 
 
 

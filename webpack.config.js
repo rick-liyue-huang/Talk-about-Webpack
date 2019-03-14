@@ -23,11 +23,18 @@ module.exports = {
 // when put the static files in cdn, we need to config this 
 // <script type="text/javascript" src="http://cdn.com.cn/main.js">
 		// publicPath: 'http://cdn.com.cn'
-		publicPath: '/'
+		// publicPath: '/'
 	},
 
 // remember the mode and devtool(source-map)
 	mode: 'development',
+	// tree shaking only for development environment
+	// "sideEffects": false, in package.json
+	// "sideEffects": ["@babel/polyfill"],
+	// for development only
+	optimization: {
+		usedExports: true
+	},
 	// source-map
 	devtool: 'cheap-module-eval-source-map',
 
@@ -162,6 +169,8 @@ module.exports = {
 	// 	"regenerator": true,
 	// 	"useESModules": false
 	// }]]*/
+
+
 
 
 
