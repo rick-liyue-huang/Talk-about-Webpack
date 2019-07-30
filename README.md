@@ -142,7 +142,7 @@ so put css and scss module in different file.
 'OptimizeCSSAssetsPlugin' for minimize css
 
 
-
+webpack restart
 
 
 
