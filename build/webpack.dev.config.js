@@ -4,6 +4,10 @@ const webpack = require('webpack');
 const commonConfig = require('./webpack.common.config.js');
 
 const devConfig = {
+	output: {
+		filename: '[name].js',
+		chunkFilename: '[name].js',
+	},
 
 	mode: 'development',
 	
@@ -48,7 +52,7 @@ const devConfig = {
 				]
 			},
 		]
-	}
+	},
 
 	plugins: [
 		// use Hot module replacement to keep the original style
@@ -56,8 +60,8 @@ const devConfig = {
 	]
 }
 
-module.exports = merge(commonConfig, devConfig);
-
+// module.exports = merge(commonConfig, devConfig);
+module.exports = devConfig;
 
 
 

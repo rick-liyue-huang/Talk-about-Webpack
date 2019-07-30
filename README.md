@@ -141,8 +141,19 @@ so put css and scss module in different file.
 
 'OptimizeCSSAssetsPlugin' for minimize css
 
+[contenthash] deal with browser catching
 
+<<<<<<< HEAD
 webpack restart
+=======
+deal with shimming
+new webpack.providePlugin
+
+imports-loader used to let 'this' point to window
+
+change env
+
+>>>>>>> eab025e73870ebe58717660c91f9884926248c1a
 
 
 

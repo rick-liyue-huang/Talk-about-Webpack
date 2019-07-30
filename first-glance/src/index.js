@@ -120,12 +120,20 @@
 // 	})
 // })
 
-import './style.css';
-import './style1.css';
+// import './style.css';
+// import './style1.css';
 
-console.log('hello');
+// console.log('hello');
 
+// import _ from 'lodash';
+// import $ from 'jquery';
+// import { ui } from './ui.js';
 
+// const dom = $('<div>');
+// dom.html(_.join(['rick', 'huang'], '+'));
+// $('body').append(dom);
+
+console.log(this === window);
 
 
 

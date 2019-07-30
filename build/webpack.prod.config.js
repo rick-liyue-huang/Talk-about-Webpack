@@ -5,6 +5,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const prodConfig = {
+
+	output: {
+		// deal with browsers catching
+		filename: '[name].[contenthash].js',
+		chunkFilename: '[name].[contenthash].js',
+	},
+
 	mode: 'production',
 	devtool: 'cheap-module-source-map',
 	module: {
@@ -63,8 +70,8 @@ const prodConfig = {
 	}
 };
 
-module.exports = merge(commonConfig, prodConfig);
-
+// module.exports = merge(commonConfig, prodConfig);
+module.exports = prodConfig
 
 
 
