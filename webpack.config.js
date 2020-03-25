@@ -1,14 +1,28 @@
 // 配置webpack 打包
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development', // production
+  // devtool: 'none', // 关闭source-map
+  // inline-source-map 将 .map文件合并到目标文件
+  // cheap-module-inline-source-map 也负责第三方的库文件映射
+
+  // devtool: 'cheap-module-inline-source-map',
+  // 通过eval来生成映射，也是最快的，
+  devtool: 'cheap-module-eval-source-map', // 开发环境
+  // devtool: 'cheap-module-source-map' // production 环境
   entry: {
+    // 打包多个文件配置
     main: './src/index.js'
+    // sub: './src/index.js'
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js', // name 对应 entry key值
     path: path.resolve(__dirname, 'dist')
+    // 静态资源放到cdn上面
+    // publicPath: 'http://cdn.com.cn'
   },
   module: {
     rules: [
@@ -68,5 +82,14 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  // plugin 可以在 webpack 在运行到一定时候可以做一些事情
+  plugins: [
+    // 在目标文件夹中自动生成html文件并引入相关打包js文件
+    // 为了保证一致，可以使用模板
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+    new CleanWebpackPlugin() // 首先删除目标文件夹，在重新生成新的文件夹
+  ]
 };

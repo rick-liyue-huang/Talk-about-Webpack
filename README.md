@@ -162,3 +162,14 @@ file-loader 可以处理更多的文件类型
 
 loader 就是打包方案，webpack 求助 loader 来处理不同的文件打包方法
 只要看到引入的文件末尾不是.js 就需要 loader
+
+plugin 可以在 webpack 在运行到一定时候可以做一些事情
+
+sourcemap: 可以处理源文件的报错
+sourcemap 是映射关系 的处理，
+
+最佳实践：
+在开发环境：
+`devtool: 'cheap-module-eval-source-map',`
+在线上环境:
+`devtool: 'cheap-module-source-map'`

@@ -31,6 +31,8 @@ dom.append(content);
 // new Sidebar();
 // new Content();
 
-import './index.scss';
-var root = document.getElementById('root');
-root.innerHTML = '<div class="iconfont iconqianbi"></div>';
+// import './index.scss';
+// var root = document.getElementById('root');
+// root.innerHTML = '<div class="iconfont iconqianbi"></div>';
+
+console.logg('hello world');
