@@ -173,3 +173,9 @@ sourcemap 是映射关系 的处理，
 `devtool: 'cheap-module-eval-source-map',`
 在线上环境:
 `devtool: 'cheap-module-source-map'`
+
+三种方法直接自动监视源代码变化
+
+1. `webpack --config webpack.config.js --watch`,
+2. webpack-dev-server 但是 dist 里面就没有内容了
+3. 自己创建一个 server

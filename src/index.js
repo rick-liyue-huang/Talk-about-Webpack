@@ -35,4 +35,4 @@ dom.append(content);
 // var root = document.getElementById('root');
 // root.innerHTML = '<div class="iconfont iconqianbi"></div>';
 
-console.logg('hello world');
+console.log('hello world!!');

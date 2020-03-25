@@ -20,9 +20,10 @@ module.exports = {
   },
   output: {
     filename: '[name].js', // name 对应 entry key值
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
     // 静态资源放到cdn上面
-    // publicPath: 'http://cdn.com.cn'
+    // publicPath: 'http://cdn.com.cn',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -91,5 +92,14 @@ module.exports = {
       template: './src/index.html'
     }),
     new CleanWebpackPlugin() // 首先删除目标文件夹，在重新生成新的文件夹
-  ]
+  ],
+  // 开通server
+  devServer: {
+    contentBase: './dist',
+    open: true, // 自动回打开一个浏览器，并访问地址8080
+    port: '8000',
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
+  }
 };
