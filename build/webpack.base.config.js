@@ -128,10 +128,34 @@ module.exports = {
     hot: true, // 开启 HMR
     hotOnly: true // 既是HMR不生效，也不更新浏览器
   },
-  // 在 处理code splitting
+  // 在 处理code splitting,处理
   optimization: {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
+      minSize: 30000, // 对要打包的源代码进行一次分割的界限
+      maxSize: 0, // 对分离出来的代码进行二次分割的界限
+      minChunks: 1, // 当一个模块被引用了多少次后才进行代码分割
+      maxAsyncRequests: 6, //对代码最多加载6个请求，超过的就不做代码分割
+      maxInitialRequests: 4, // 入口文件引入的库做代码分割最多是4个,多的就不分割了
+      automaticNameDelimiter: '~',
+      automaticNameMaxLength: 30,
+      name: true,
+      // 缓存组，将打包的文件件先缓存放到这里，然后最后根据规则在处理
+      cacheGroups: {
+        // 只有打包同步代码走这里
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10, // 这个优先级高，所以首先打包成vendor.js文件
+          filename: 'vendors.js'
+        },
+        default: {
+          // 对应 entry 入口
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true, // 对于嵌入式的包文件已经引入的就复用，不会再重复打包
+          filename: 'common.js'
+        }
+      }
     }
   }
 };

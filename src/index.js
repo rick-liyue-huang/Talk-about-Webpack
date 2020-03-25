@@ -96,14 +96,20 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 // console.log(_.join(['a', 'b', 'c'], '-'));
 
-function getComponent() {
-  return import('lodash').then(({ default: _ }) => {
-    var element = document.createElement('div');
-    element.innerHTML = _.join(['rick', 'huang'], '-');
-    return element;
-  });
-}
+// function getComponent() {
+//   // magic comments
+//   return import(/*webpackChunkName:"lodash"*/ 'lodash').then(
+//     ({ default: _ }) => {
+//       var element = document.createElement('div');
+//       element.innerHTML = _.join(['rick', 'huang'], '-');
+//       return element;
+//     }
+//   );
+// }
 
-getComponent().then(element => {
-  document.body.appendChild(element);
-});
+// getComponent().then(element => {
+//   document.body.appendChild(element);
+// });
+
+import test from './test';
+console.log(test.name);

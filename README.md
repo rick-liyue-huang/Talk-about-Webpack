@@ -213,3 +213,20 @@ code splitting: 通过对代码拆分，使得加载更快和取消没有必要�
 当有公用的类库，会自动的和逻辑代码分开
 webpack 在处理同步的引入库代码的时候，单独存放到 vender 文件
 webpack 在处理异步的引入库代码的时候，单独的存放到 0.js 文件
+
+```
+function getComponent() {
+  // magic comments
+  return import(/*webpackChunkName:"lodash"*/ 'lodash').then(
+    ({ default: _ }) => {
+      var element = document.createElement('div');
+      element.innerHTML = _.join(['rick', 'huang'], '-');
+      return element;
+    }
+  );
+}
+
+getComponent().then(element => {
+  document.body.appendChild(element);
+});
+```
