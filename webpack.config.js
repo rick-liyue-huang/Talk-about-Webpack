@@ -20,7 +20,7 @@ module.exports = {
     // sub: './src/index.js'
   },
   output: {
-    filename: '[name].js', // name 对应 entry key值
+    filename: '[name].js', // name 对应 entry key值 main
     path: path.resolve(__dirname, 'dist'),
     // 静态资源放到cdn上面
     // publicPath: 'http://cdn.com.cn',
@@ -42,7 +42,7 @@ module.exports = {
       {
         // 测试 es6语法，这只是做了webpack 和 babel的打通，具体的执行需要.babelrc
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /node_modules/, //忽略第三方模块的es6语法
         loader: 'babel-loader',
         options: {
           // 在 .babelrc文件中
@@ -128,7 +128,7 @@ module.exports = {
   ],
   // 开通server
   devServer: {
-    contentBase: './dist',
+    contentBase: './dist', // 在哪个目录下启动这个服务器
     open: true, // 自动回打开一个浏览器，并访问地址8080
     port: '8000',
     // proxy: {

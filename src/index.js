@@ -68,7 +68,18 @@ if (module.hot) {
 
 import '@babel/polyfill'; // 处理es6的具体语法
 
-const arr = [new Promise(() => {}), new Promise(() => {})];
-arr.map(item => {
-  console.log(item);
-});
+// const arr = [new Promise(() => {}), new Promise(() => {})];
+// arr.map(item => {
+//   console.log(item);
+// });
+
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends Component {
+  render() {
+    return <div>Hello world</div>;
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
