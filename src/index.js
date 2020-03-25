@@ -35,4 +35,30 @@ dom.append(content);
 // var root = document.getElementById('root');
 // root.innerHTML = '<div class="iconfont iconqianbi"></div>';
 
-console.log('hello world!!');
+// console.log('hello world!!');
+
+import './style.css';
+
+var btn = document.createElement('button');
+btn.innerHTML = 'add';
+document.body.appendChild(btn);
+
+btn.onclick = function() {
+  var div = document.createElement('div');
+  div.innerHTML = 'item';
+  document.body.appendChild(div);
+};
+
+import counter from './counter';
+import number from './number';
+
+counter();
+number();
+
+// 热更新
+if (module.hot) {
+  module.hot.accept('./number', () => {
+    document.body.removeChild(document.getElementById('number'));
+    number();
+  });
+}

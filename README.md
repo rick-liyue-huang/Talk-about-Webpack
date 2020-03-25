@@ -179,3 +179,17 @@ sourcemap 是映射关系 的处理，
 1. `webpack --config webpack.config.js --watch`,
 2. webpack-dev-server 但是 dist 里面就没有内容了
 3. 自己创建一个 server
+
+HMR: Hot module replacement
+改变样式，页面布局，浏览器不会重新刷新，不会更改 js 之前的内容
+当引入不同的 js 文件，需要对引入的文件进行 HMR 代码处理
+css 不需要写这种代码，是因为 css-loader 已经内置
+
+```
+if (module.hot) {
+  module.hot.accept('./number', () => {
+    document.body.removeChild(document.getElementById('number'));
+    number();
+  });
+}
+```

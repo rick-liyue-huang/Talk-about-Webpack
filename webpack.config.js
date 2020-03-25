@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development', // production
@@ -57,7 +58,7 @@ module.exports = {
         // 从右向左打包顺序,
         // css-loader 用来分析有几个css文件，并且合并成一个文件
         // style-loader 用来加载样式
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.scss$/,
@@ -91,15 +92,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new CleanWebpackPlugin() // 首先删除目标文件夹，在重新生成新的文件夹
+    new CleanWebpackPlugin(), // 首先删除目标文件夹，在重新生成新的文件夹
+    new webpack.HotModuleReplacementPlugin() // 开启HMR
   ],
   // 开通server
   devServer: {
     contentBase: './dist',
     open: true, // 自动回打开一个浏览器，并访问地址8080
     port: '8000',
-    proxy: {
-      '/api': 'http://localhost:3000'
-    }
+    // proxy: {
+    //   '/api': 'http://localhost:3000'
+    // }
+    hot: true, // 开启 HMR
+    hotOnly: true // 既是HMR不生效，也不更新浏览器
   }
 };
