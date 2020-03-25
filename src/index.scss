@@ -1,0 +1,42 @@
+@import './avatar.scss';
+
+body {
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('./fonts/iconfont.eot?t=1585118566344'); /* IE9 */
+  src: url('./fonts/iconfont.eot?t=1585118566344#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPAAAsAAAAAB+gAAAN0AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDJIJ9ATYCJAMQCwoABCAFhG0HRxvuBsgekiSQQAIFCSggAiPEw9dY+v7u3mVDqEAxWFZRURlPoLAVFsip2hpJqop19Q3lWbPJsuactLCTHhRM0rRO5+wX+YOf8st8Gb8tU+D/OWa6tAnkB5pLVtlob4CjaB1YVNLoRO+E8YaxC1rieQIdxo2VdNDY3g/SFea0QNxJIgPSMwqlIT1UoVmxtoiPIEVNr4gbAPgQ/H38A7mRTtLIzLlHFw08qP6penuSXDyw2GQPAZjT6cA2kbEAKMRVpeEEGQUWkDrUwcm2AFWVmKqn9O3JgQHEOoqgWv/yyJIgmszULrCBgpmfKoeRCEuhTILCk5D1AKkFVJj0AvAJmLhRjydFqnk1Z3SPdFGKeco5iomqaePV87asNfG0b+uSoKB/k6nQs9UqplQ8DUdsMo0HizebldbT8q3Y11NE+6hBm80NlG/zOmu/RxbPM9EXHic9ekQ/eND/8CG17nEVZaL65j5+7MvQitTKHz0/foq175Tf8uvUlPiYY08rL3yfq/i+uU7dd+u2uaarM1+zXV3f3a0jpC06vcXSoN6uqTebqs23btVr4jvevKlLqTMkp72sTs4eqO0Z+uZNvfqrWVur9/c7zDO/wXJ95IawpX7j//qe+vfvG9QH1f4+9Wqw8uPAS4T2jMN1xPrLlzeQFtWTkusRPdmnDmc+QejFyRNUwfrvxJKjR5aQmIptxBJiKaL5VPgZiAFoycfJ6QCQ35EuoDVfIKt/4ThfGsMfpmnL/6crH6Hq+36PEDhaChjG+A/MzswfxuxYUjS2qSxF4TgM3VgcpmIkdFhqflOEAa+mMA0DiS5UzoSQtBmDrJpAFuwCNHTagKZqGzrMa9rcaZCMFKUdc1YACH2OQ9LjM2R9biIL9iU0jPgCTX1BQofjMO7ZaSokRZ2MGIx4yM6BEheNCLYaK8L0XiTOCDFymh3gaSQnJDfMyczOh5tQBMlTLEjMFHMxFqAgR8OwEVyGQqEojMnRAOJwph/jWGlWllD1pUwuGgYK+2QIA0N4EGsOSMKJihC8ypii8Pu9ENEMIQy5oahKSUNkCVL/UI5M2R2QTYJIp6Jb+SRhJlEuDBNAAllUGNQIdEjICkRBsepRAQgHy+Qf4IsplYXKCV0FmcuLwm+4CTqY95RIkaNEQ9sDmjOuZhyTGpeYCCspBA8v8kxAkgMA')
+      format('woff2'),
+    url('./fonts/iconfont.woff?t=1585118566344') format('woff'),
+    url('./fonts/iconfont.ttf?t=1585118566344') format('truetype'),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+      url('./fonts/iconfont.svg?t=1585118566344#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconsey-A-a:before {
+  content: '\e6b1';
+}
+
+.iconqianbi:before {
+  content: '\e63a';
+}
+
+.iconfangdajing:before {
+  content: '\e60c';
+}

@@ -1,4 +1,3 @@
-
 ## Talk about Webpack
 
 webpack is one static module bundler for modern JavaScript applications.
@@ -10,7 +9,7 @@ run `npx webpack XXX.js` to run webpack in local environment
 after create 'webpack.config.js'
 when run `npx webpack`, the project will defaultly get 'webpack.config.js', or run `npx webpack --config webpack.config.js`.
 
-also input `"bundle": "npx webpack --config webpack.config.js"` in  "script" tag in 'package.json' file.
+also input `"bundle": "npx webpack --config webpack.config.js"` in "script" tag in 'package.json' file.
 so we can run `npm run bundle` directly.
 
 additionaly, create src directory.
@@ -21,12 +20,11 @@ when complete bundle,
 Version: webpack 4.29.6
 Time: 80ms
 Built at: 03/08/2019 10:11:18 AM
-    Asset      Size  Chunks             Chunk Names
-bundle.js  1.05 KiB       0  [emitted]  main
+Asset Size Chunks Chunk Names
+bundle.js 1.05 KiB 0 [emitted] main
 '
 
 "mode: 'production'" defaultly, or "mode: 'development'".
-
 
 ### Modules
 
@@ -43,6 +41,7 @@ used to deal with different files by loaders
 	}]
 }
 ```
+
 use 'url-loader' to replace 'file-loader' to deal with picture.
 
 'css-loader' deal with different .css files, and combine them.
@@ -55,9 +54,9 @@ run `npm i --save-dev postcss-loader autoprefixer` to deal with the 'webkit' and
 
 deal with fonts file by 'file-loader'
 
-对于loader，它就是一个转换器，将A文件进行编译形成B文件，这里操作的是文件，比如将A.scss或A.less转变为B.css，单纯的文件转换过程；
+对于 loader，它就是一个转换器，将 A 文件进行编译形成 B 文件，这里操作的是文件，比如将 A.scss 或 A.less 转变为 B.css，单纯的文件转换过程；
 
-对于plugin，它就是一个扩展器，它丰富了wepack本身，针对是loader结束后，webpack打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听webpack打包过程中的某些节点
+对于 plugin，它就是一个扩展器，它丰富了 wepack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点
 
 source-map:
 is one mapping tool, can match source index.js to dist main.js
@@ -68,19 +67,15 @@ mode: 'development' - devtool: 'cheap-module-eval-source-map'
 
 mode: 'production' - devtool: 'cheap-module-source-map'
 
-
 let the webpack watch the source code changes.
 method 1: "watch": "npx webpack --config webpack.config.js --watch"
 
 method 2:
 run `"start": "webpack-dev-server"` in 'package.json',
-and add 
-`devServer: {
-	contentBase: './dist',
-	open: true
-	} ` in 'webpack.config.js'
+and add
+`devServer: { contentBase: './dist', open: true }` in 'webpack.config.js'
 
-method 3: 
+method 3:
 run `"server": "node ./first-glance/src/server.js"` in 'package.json',
 
 and create 'server.js' file.
@@ -101,7 +96,6 @@ if(module.hot) {
 
 'babel-loader' is the bridge between babel and webpack. and '@babel/preset-env' deal with transfering from es6 to es5.
 
-
 'tree shaking' only support ES module, and only support mode of 'development'
 
 decompse to 'webpack.dev.config.js', 'webpack.prod.config.js', 'webpack.common.config.js'
@@ -120,7 +114,7 @@ lazy load -> import
 
 '"prod-analyze": "webpack --profile --json > stats.json"' in package.json
 
-and get 'stats.json' use 
+and get 'stats.json' use
 http://webpack.github.com/analyse to check.
 
 or use https://alexkuz.github.io/webpack-chart/ to upload stats.json
@@ -131,10 +125,9 @@ command+shift+p to get coverage
 看代码使用率, so use lazy loading
 webpack hope to write async code
 
-import(/* webpackPrefetch: true */ 'LoginModal');
+import(/_ webpackPrefetch: true _/ 'LoginModal');
 
-import(/* webpackPreload: true */ 'ChartingLibrary');
-
+import(/_ webpackPreload: true _/ 'ChartingLibrary');
 
 run `npm install --save-dev mini-css-extract-plugin` to seperate css file use in production environment
 so put css and scss module in different file.
@@ -153,17 +146,19 @@ imports-loader used to let 'this' point to window
 
 change env
 
->>>>>>> eab025e73870ebe58717660c91f9884926248c1a
+webpack 究竟是什么
+可以开始认为 js 的翻译器
+webpack is a module bundler 模块打包工具
+进一步明白 webpack 是模块打包工具
+最早的时候，webpack 是 js 的打包工具
 
+应用特定的配置文件打包
+`npx webpack --config webpack.config.js`
+加入 `"bundle": "webpack --config webpack.config.js"`
 
+`mode: "production"` 得到压缩的打包文件
 
+file-loader 可以处理更多的文件类型
 
-
-
-
-
-
-
-
-
-
+loader 就是打包方案，webpack 求助 loader 来处理不同的文件打包方法
+只要看到引入的文件末尾不是.js 就需要 loader
