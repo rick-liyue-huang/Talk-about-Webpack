@@ -9,7 +9,9 @@
   "scripts": {
     "bundle": "webpack --watch",
     "start": "webpack-dev-server",
-    "middleware": "node server.js"
+    "middleware": "node server.js",
+    "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
+    "build": "webpack --config ./build/webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
@@ -42,7 +44,8 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",

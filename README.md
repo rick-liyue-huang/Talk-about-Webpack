@@ -200,3 +200,6 @@ tree shaking : 把一个模块里面没用的东西都摇晃掉
 只支持 es module,因为底层是静态模块引入
 加入`"sideEffects": "false",` in package.json，这样引入的文件就不会去掉， 对所有的模块都进行 tree shaking
 如果碰到 css 文件也不使用 tree shaking
+
+production 模式下 代码一般是压缩的
+并且 source-map 也是不同的

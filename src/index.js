@@ -90,4 +90,4 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 import { add, minus } from './math';
 
-add(1, 2);
+add(1, 7);
