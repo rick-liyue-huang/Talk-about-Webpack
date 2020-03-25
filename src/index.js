@@ -88,6 +88,22 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 */
 
-import { add, minus } from './math';
+// import { add, minus } from './math';
 
-add(1, 7);
+// add(1, 7);
+
+// import _ from 'lodash';
+
+// console.log(_.join(['a', 'b', 'c'], '-'));
+
+function getComponent() {
+  return import('lodash').then(({ default: _ }) => {
+    var element = document.createElement('div');
+    element.innerHTML = _.join(['rick', 'huang'], '-');
+    return element;
+  });
+}
+
+getComponent().then(element => {
+  document.body.appendChild(element);
+});

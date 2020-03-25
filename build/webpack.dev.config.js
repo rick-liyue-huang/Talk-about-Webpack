@@ -15,6 +15,7 @@ const devConfig = {
     port: '8000',
     hot: true // 开启 HMR
   },
+  // 处理 tree shaking
   optimization: {
     usedExports: true
   }

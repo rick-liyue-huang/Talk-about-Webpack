@@ -203,3 +203,13 @@ tree shaking : 把一个模块里面没用的东西都摇晃掉
 
 production 模式下 代码一般是压缩的
 并且 source-map 也是不同的
+
+代码分割和 webpack 无关，如有需要就加载 optimization
+webpack code splitting
+是将在打包文件中将 业务代码 和 引入的包文件 分开
+并且业务逻辑是经常更改的，因此如果频繁的加载逻辑代码，需要将大量的引入包文件分开
+
+code splitting: 通过对代码拆分，使得加载更快和取消没有必要的代码加载
+当有公用的类库，会自动的和逻辑代码分开
+webpack 在处理同步的引入库代码的时候，单独存放到 vender 文件
+webpack 在处理异步的引入库代码的时候，单独的存放到 0.js 文件

@@ -11,7 +11,8 @@
     "start": "webpack-dev-server",
     "middleware": "node server.js",
     "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
-    "build": "webpack --config ./build/webpack.prod.config.js"
+    "build": "webpack --config ./build/webpack.prod.config.js",
+    "dev-build": "webpack --config ./build/webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "@babel/preset-react": "^7.9.4",
     "autoprefixer": "^9.7.5",
     "babel-loader": "^8.1.0",
+    "babel-plugin-dynamic-import-webpack": "^1.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
@@ -51,6 +53,7 @@
     "@babel/polyfill": "^7.8.7",
     "@babel/runtime": "^7.9.2",
     "@babel/runtime-corejs2": "^7.9.2",
+    "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

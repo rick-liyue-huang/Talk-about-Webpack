@@ -128,10 +128,10 @@ module.exports = {
     hot: true, // 开启 HMR
     hotOnly: true // 既是HMR不生效，也不更新浏览器
   },
-  // tree shaking 生效了，查看目标文件
-  // 下面的代码只在 development模式下添加，配套的需要的sideEffects
-  // 注意在 production模式下,就不需要下面的代码,对应的devtool
+  // 在 处理code splitting
   optimization: {
-    usedExports: true
+    splitChunks: {
+      chunks: 'all'
+    }
   }
 };
