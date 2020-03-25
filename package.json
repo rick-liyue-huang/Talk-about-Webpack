@@ -20,7 +20,11 @@
   },
   "homepage": "https://github.com/rick-liyue-huang/Talk-about-Webpack#readme",
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "autoprefixer": "^9.7.5",
+    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
@@ -35,5 +39,10 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "@babel/runtime": "^7.9.2",
+    "@babel/runtime-corejs2": "^7.9.2"
   }
 }

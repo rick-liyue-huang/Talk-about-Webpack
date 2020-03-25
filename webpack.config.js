@@ -28,19 +28,50 @@ module.exports = {
   },
   module: {
     rules: [
-      /*
+      // {
+      //   test: /\.(png|jpg|gif)$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[name]_[hash].[ext]',
+      //       // 生成到dist下面的images文件夹里
+      //       outputPath: 'images/'
+      //     }
+      //   }
+      // },
       {
-        test: /\.(png|jpg|gif)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name]_[hash].[ext]',
-            // 生成到dist下面的images文件夹里
-            outputPath: 'images/'
-          }
+        // 测试 es6语法，这只是做了webpack 和 babel的打通，具体的执行需要.babelrc
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          // 在 .babelrc文件中
+          // 只是业务代码就用presents, 但是会污染全局环境
+          // "presets": [
+          //   [
+          //     "@babel/preset-env",
+          //     {
+          //       "targets": {
+          //         "chrome": "67" // 设定一些目标浏览器，如果浏览支持es6就不需要babel转换
+          //       },
+          //       "useBuiltIns": "usage" // 用到什么加载什么，不是全部加载
+          //     }
+          //   ]
+          // ]
+          // 如果开发包文件，就用plugins
+          // "plugins": [
+          //   [
+          //     "@babel/plugin-transform-runtime",
+          //     {
+          //       "corejs": 2, // 记住必须配置，同时需要安装包corejs2
+          //       "helpers": true,
+          //       "regenerator": true,
+          //       "useESModules": false
+          //     }
+          //   ]
+          // ]
         }
       },
-      */
       {
         test: /\.(jpg|png|gif)$/,
         use: {

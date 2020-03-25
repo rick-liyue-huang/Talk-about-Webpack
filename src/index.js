@@ -37,6 +37,7 @@ dom.append(content);
 
 // console.log('hello world!!');
 
+/*
 import './style.css';
 
 var btn = document.createElement('button');
@@ -62,3 +63,12 @@ if (module.hot) {
     number();
   });
 }
+
+*/
+
+import '@babel/polyfill'; // 处理es6的具体语法
+
+const arr = [new Promise(() => {}), new Promise(() => {})];
+arr.map(item => {
+  console.log(item);
+});
