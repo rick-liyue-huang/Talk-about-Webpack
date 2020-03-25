@@ -1,5 +1,8 @@
 {
   "name": "Talk-about-Webpack",
+  "sideEffects": [
+    "*.css"
+  ],
   "version": "1.0.0",
   "description": "webpack is one static module bundler for modern JavaScript applications.",
   "private": false,

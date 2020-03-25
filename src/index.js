@@ -66,13 +66,14 @@ if (module.hot) {
 
 */
 
-import '@babel/polyfill'; // 处理es6的具体语法
+import '@babel/polyfill'; // 处理es6的具体语法, 如果用了useBuiltIns，就不需要
 
 // const arr = [new Promise(() => {}), new Promise(() => {})];
 // arr.map(item => {
 //   console.log(item);
 // });
 
+/*
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -83,3 +84,10 @@ class App extends Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+
+*/
+
+import { add, minus } from './math';
+
+add(1, 2);
