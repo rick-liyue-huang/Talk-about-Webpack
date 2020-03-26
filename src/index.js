@@ -66,7 +66,7 @@ if (module.hot) {
 
 */
 
-import '@babel/polyfill'; // 处理es6的具体语法, 如果用了useBuiltIns，就不需要
+// import '@babel/polyfill'; // 处理es6的具体语法, 如果用了useBuiltIns，就不需要
 
 // const arr = [new Promise(() => {}), new Promise(() => {})];
 // arr.map(item => {
@@ -111,5 +111,32 @@ ReactDOM.render(<App />, document.getElementById('root'));
 //   document.body.appendChild(element);
 // });
 
-import test from './test';
-console.log(test.name);
+// import test from './test';
+// console.log(test.name);
+
+import _ from 'lodash';
+
+async function getComponent() {
+  const { default: _ } = await import(/*webpackChunkName: "lodash"*/ 'lodash');
+  const ele = document.createElement('div');
+  ele.innerHTML = _.join(['rick', 'huang'], '-');
+  return ele;
+
+  // return import(/*webpackChunkName: "lodash"*/ 'lodash').then(() => {
+  //   var ele = document.createElement('div');
+  //   ele.innerHTML = _.join(['rick', 'huang'], '-');
+  //   return ele;
+  // });
+}
+
+// document.addEventListener('click', () => {
+//   getComponent().then(ele => {
+//     document.body.appendChild(ele);
+//   });
+// });
+
+document.addEventListener('click', () => {
+  import(/*webpackPrefetch: true*/ './click').then(({ default: func }) => {
+    func();
+  });
+});

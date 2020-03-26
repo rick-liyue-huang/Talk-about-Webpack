@@ -230,3 +230,28 @@ getComponent().then(element => {
   document.body.appendChild(element);
 });
 ```
+
+对打包代码进行分析
+`webpack --profile --json > stats.json`
+在 splitcoding 有分析软件分析打包
+
+通过查看 coverage 鼓励异步加载, 并且使用 webpackPrefetch: true
+/_ webpackPreload: true _/
+
+```
+function handleClick() {
+  const ele = document.createElement('div');
+  ele.innerHTML = 'rick';
+  document.body.appendChild(ele);
+}
+export default handleClick;
+
+document.addEventListener('click', () => {
+  import(/*webpackPrefetch: true*/'./click').then(({ default: func }) => {
+    func();
+  });
+});
+
+```
+
+总之鼓励异步加载，并且加入 webpackPrefetch: true，使得代码利用率更高，也就是懒加载，懒加载会牺牲一些用户体验，所以用 webpackPrefetch: true 魔法注释， code coverage 代码覆盖率

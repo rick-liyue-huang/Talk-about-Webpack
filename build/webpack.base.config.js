@@ -134,7 +134,7 @@ module.exports = {
       chunks: 'all',
       minSize: 30000, // 对要打包的源代码进行一次分割的界限
       maxSize: 0, // 对分离出来的代码进行二次分割的界限
-      minChunks: 1, // 当一个模块被引用了多少次后才进行代码分割
+      minChunks: 1, // 当一个模块被1个以上打包后的模块引用了才进行代码分割
       maxAsyncRequests: 6, //对代码最多加载6个请求，超过的就不做代码分割
       maxInitialRequests: 4, // 入口文件引入的库做代码分割最多是4个,多的就不分割了
       automaticNameDelimiter: '~',

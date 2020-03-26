@@ -12,7 +12,7 @@
     "middleware": "node server.js",
     "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
     "build": "webpack --config ./build/webpack.prod.config.js",
-    "dev-build": "webpack --config ./build/webpack.dev.config.js"
+    "dev-build": "webpack --profile --json > stats.json --config ./build/webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
