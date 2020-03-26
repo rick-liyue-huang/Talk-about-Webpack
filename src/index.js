@@ -114,20 +114,20 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // import test from './test';
 // console.log(test.name);
 
-import _ from 'lodash';
+// import _ from 'lodash';
 
-async function getComponent() {
-  const { default: _ } = await import(/*webpackChunkName: "lodash"*/ 'lodash');
-  const ele = document.createElement('div');
-  ele.innerHTML = _.join(['rick', 'huang'], '-');
-  return ele;
+// async function getComponent() {
+//   const { default: _ } = await import(/*webpackChunkName: "lodash"*/ 'lodash');
+//   const ele = document.createElement('div');
+//   ele.innerHTML = _.join(['rick', 'huang'], '-');
+//   return ele;
 
-  // return import(/*webpackChunkName: "lodash"*/ 'lodash').then(() => {
-  //   var ele = document.createElement('div');
-  //   ele.innerHTML = _.join(['rick', 'huang'], '-');
-  //   return ele;
-  // });
-}
+//   // return import(/*webpackChunkName: "lodash"*/ 'lodash').then(() => {
+//   //   var ele = document.createElement('div');
+//   //   ele.innerHTML = _.join(['rick', 'huang'], '-');
+//   //   return ele;
+//   // });
+// }
 
 // document.addEventListener('click', () => {
 //   getComponent().then(ele => {
@@ -135,8 +135,13 @@ async function getComponent() {
 //   });
 // });
 
-document.addEventListener('click', () => {
-  import(/*webpackPrefetch: true*/ './click').then(({ default: func }) => {
-    func();
-  });
-});
+// document.addEventListener('click', () => {
+//   import(/*webpackPrefetch: true*/ './click').then(({ default: func }) => {
+//     func();
+//   });
+// });
+
+import './style.css';
+import './style1.css';
+
+console.log('hello');

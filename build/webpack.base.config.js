@@ -16,6 +16,7 @@ module.exports = {
     // 静态资源放到cdn上面
     // publicPath: 'http://cdn.com.cn',
     // publicPath: '/'
+    // chunkFilename: '[name].chunk.js' // 异步加载的间接文件 例如 lodash.js
   },
   module: {
     rules: [
@@ -76,30 +77,6 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        // 从右向左打包顺序,
-        // css-loader 用来分析有几个css文件，并且合并成一个文件
-        // style-loader 用来加载样式
-        use: ['style-loader', 'css-loader', 'postcss-loader']
-      },
-      {
-        test: /\.scss$/,
-        // 用 node-sass sass-loader来处理scss文件,
-        // 如果需要加入厂商标记 需要 postcss-loader,并且引入配置文件
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2 // 要求scss文件之间互相的引用也要走一遍全部的loader
-              // modules: true // 开启css模块化打包
-            }
-          },
-          'sass-loader',
-          'postcss-loader'
-        ]
-      },
-      {
         test: /\.(eot|ttf|svg|woff)$/,
         use: {
           loader: 'file-loader'
@@ -128,8 +105,11 @@ module.exports = {
     hot: true, // 开启 HMR
     hotOnly: true // 既是HMR不生效，也不更新浏览器
   },
-  // 在 处理code splitting,处理
+
   optimization: {
+    // 在 处理code splitting,处理
+    // 处理 tree shaking
+    usedExports: true, // 对所有的导出文件都做tree shaking, 但是通过sideEffects .css除外
     splitChunks: {
       chunks: 'all',
       minSize: 30000, // 对要打包的源代码进行一次分割的界限

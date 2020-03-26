@@ -255,3 +255,7 @@ document.addEventListener('click', () => {
 ```
 
 总之鼓励异步加载，并且加入 webpackPrefetch: true，使得代码利用率更高，也就是懒加载，懒加载会牺牲一些用户体验，所以用 webpackPrefetch: true 魔法注释， code coverage 代码覆盖率
+
+css chunk
+单独得到 css 打包文件用 `mini-css-extract-plugin`
+如果对打包 css 文件进行压缩用 `optimize-css-assets-webpack-plugin`
