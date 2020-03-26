@@ -1,5 +1,6 @@
 {
   "name": "Talk-about-Webpack",
+  "main": "./dist/library.js",
   "sideEffects": [
     "*.css"
   ],
@@ -13,9 +14,10 @@
     "dev1": "webpack-dev-server --config ./build1/webpack.dev.config.js",
     "build1": "webpack --config ./build1/webpack.prod.config.js",
     "dev-build1": "webpack --config ./build1/webpack.dev.config.js",
-    "dev": "webpack-dev-server --config ./build/webpack.base.config.js",
-    "dev-build": "webpack --profile --json > stats.json --config ./build/webpack.base.config.js",
-    "build": "webpack --env.production --config ./build/webpack.base.config.js"
+    "dev2": "webpack-dev-server --config ./build2/webpack.base.config.js",
+    "dev-build2": "webpack --profile --json > stats.json --config ./build2/webpack.base.config.js",
+    "build2": "webpack --env.production --config ./build2/webpack.base.config.js",
+    "build": "webpack --config ./build/webpack.config.js"
   },
   "repository": {
     "type": "git",

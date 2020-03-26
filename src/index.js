@@ -156,4 +156,9 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // dom.html(_.join(['rick', 'huang'], '--- '));
 // $('body').append(dom);
 
-console.log(this === window);
+// console.log(this === window);
+
+import * as math from './math';
+import * as string from './string';
+
+export default { math, string };

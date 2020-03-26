@@ -293,3 +293,10 @@ new webpack.ProvidePlugin({
 ```
 
 也可以通过环境变量来区分重写调整 webpack.config 文件的相互引用
+
+如何将打包好的文件给别人使用, 在 package.json 里面加入
+"main": "./dist/library.js"
+
+在 注册 npmjs.org
+npm adduser
+npm publish
