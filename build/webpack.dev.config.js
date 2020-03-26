@@ -42,6 +42,11 @@ const devConfig = {
     open: true, // 自动回打开一个浏览器，并访问地址8080
     port: '8000',
     hot: true // 开启 HMR
+  },
+  output: {
+    // 在开发环境不需要考浏览器虑缓存的问题，可以直接自己手动刷新浏览器就可以
+    filename: '[name].js'
+    // chunkFilename: '[name].chunk.js'
   }
 };
 

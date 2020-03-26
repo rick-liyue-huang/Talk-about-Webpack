@@ -259,3 +259,15 @@ document.addEventListener('click', () => {
 css chunk
 单独得到 css 打包文件用 `mini-css-extract-plugin`
 如果对打包 css 文件进行压缩用 `optimize-css-assets-webpack-plugin`
+
+浏览器缓存的问题：
+
+因为打包好的文件名字没有发生变化，浏览器就默认内容没有更新，因此浏览器不会强制更新，因此需要做一些处理
+需要对输出的文件加入[hash]来生成不同的文件
+针对老版本
+
+```
+runtimeChunk: {
+  name: 'runtime'
+}
+```

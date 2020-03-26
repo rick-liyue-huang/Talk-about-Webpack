@@ -11,7 +11,7 @@ module.exports = {
     // sub: './src/index.js'
   },
   output: {
-    filename: '[name].js', // name 对应 entry key值 main
+    // filename: '[name].js', // name 对应 entry key值 main
     path: path.resolve(__dirname, '../', 'dist')
     // 静态资源放到cdn上面
     // publicPath: 'http://cdn.com.cn',
@@ -94,18 +94,6 @@ module.exports = {
     new CleanWebpackPlugin(), // 首先删除目标文件夹，在重新生成新的文件夹
     new webpack.HotModuleReplacementPlugin() // 开启HMR
   ],
-  // 开通server
-  devServer: {
-    contentBase: './dist', // 在哪个目录下启动这个服务器
-    open: true, // 自动回打开一个浏览器，并访问地址8080
-    port: '8000',
-    // proxy: {
-    //   '/api': 'http://localhost:3000'
-    // }
-    hot: true, // 开启 HMR
-    hotOnly: true // 既是HMR不生效，也不更新浏览器
-  },
-
   optimization: {
     // 在 处理code splitting,处理
     // 处理 tree shaking
@@ -137,5 +125,10 @@ module.exports = {
         }
       }
     }
-  }
+    // 针对老版本webpack
+    // runtimeChunk: {
+    //   name: 'runtime'
+    // }
+  },
+  performance: false // 取消打包警告
 };

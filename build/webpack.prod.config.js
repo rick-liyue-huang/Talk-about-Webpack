@@ -7,7 +7,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const prodConfig = {
   mode: 'production', // production
-  devtool: 'cheap-module-source-map',
+  // devtool: 'cheap-module-source-map', // souce-map先去掉
   module: {
     rules: [
       {
@@ -45,6 +45,10 @@ const prodConfig = {
   optimization: {
     // 对导出的css文件进行压缩
     minimizer: [new OptimizeCSSAssetsPlugin({})]
+  },
+  output: {
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].chunk.js'
   }
 };
 
