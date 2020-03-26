@@ -333,7 +333,7 @@ if ('serviceWorker' in navigator) {
 针对 typescript 文件进行打包
 加载 ts-loader, 加入 tsconfig.json, 加载 @types/typescript
 
-devserver 的代理
+devserver 的代理 只在 开发环境下调试
 
 ```
 devServer: {
@@ -362,3 +362,6 @@ devServer: {
   hotOnly: true // 既是HMR不生效，也不更新浏览器
 },
 ```
+
+通过 devserver 配置处理 单页应用
+`historyApiFallback: true,`

@@ -131,7 +131,8 @@ module.exports = {
     contentBase: './dist', // 在哪个目录下启动这个服务器
     open: true, // 自动回打开一个浏览器，并访问地址8080
     port: '8000',
-    index: '', // 也可以代理  '/'
+    // index: '', // 也可以代理  '/'
+    historyApiFallback: true, // [{ from: 'abc.html', to: 'index.html' }], // 处理单页应用, 如果找不到path，就默认挂在到服务器index.html上
     proxy: {
       '/react/api': {
         target: 'http://www.dell-lee.com', // 代理到服务器
