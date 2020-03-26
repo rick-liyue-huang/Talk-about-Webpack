@@ -2,7 +2,7 @@
 // 它不支持hmr
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const prodConfig = {
   mode: 'production', // production
   // devtool: 'cheap-module-source-map', // souce-map先去掉
@@ -38,7 +38,11 @@ const prodConfig = {
     new MiniCssExtractPlugin({
       filename: '[name].css', // 直接引用
       chunkFilename: '[name].chunk.css' // 间接引用
-    })
+    }),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true
+    }) // service work
   ],
   optimization: {
     // 对导出的css文件进行压缩

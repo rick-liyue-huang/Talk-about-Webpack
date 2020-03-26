@@ -158,7 +158,22 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 // console.log(this === window);
 
-import * as math from './math';
-import * as string from './string';
+// import * as math from './math';
+// import * as string from './string';
 
-export default { math, string };
+// export default { math, string };
+
+console.log('hello world');
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(registration => {
+        console.log('Service work registered');
+      })
+      .catch(e => {
+        console.log('service-worker err');
+      });
+  });
+}

@@ -300,3 +300,32 @@ new webpack.ProvidePlugin({
 在 注册 npmjs.org
 npm adduser
 npm publish
+
+`--profile --json > stats.json`
+
+PWA
+
+处理 pwa,且 只有 线上代码
+`workbox-webpack-plugin` google 提供的插件
+
+```
+new WorkboxPlugin.GenerateSW({
+  clientsClaim: true,
+  skipWaiting: true
+}) // service work
+```
+
+```
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(registration => {
+        console.log('Service work registered');
+      })
+      .catch(e => {
+        console.log('service-worker err');
+      });
+  });
+}
+```

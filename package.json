@@ -1,6 +1,5 @@
 {
   "name": "Talk-about-Webpack",
-  "main": "./dist/library.js",
   "sideEffects": [
     "*.css"
   ],
@@ -15,9 +14,10 @@
     "build1": "webpack --config ./build1/webpack.prod.config.js",
     "dev-build1": "webpack --config ./build1/webpack.dev.config.js",
     "dev2": "webpack-dev-server --config ./build2/webpack.base.config.js",
-    "dev-build2": "webpack --profile --json > stats.json --config ./build2/webpack.base.config.js",
+    "dev-build2": "webpack --config ./build2/webpack.base.config.js",
     "build2": "webpack --env.production --config ./build2/webpack.base.config.js",
-    "build": "webpack --config ./build/webpack.config.js"
+    "build": "webpack --config ./build/webpack.config.js",
+    "new-start": "http-server dist"
   },
   "repository": {
     "type": "git",
@@ -56,7 +56,8 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "workbox-webpack-plugin": "^5.1.2"
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
