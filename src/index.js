@@ -146,9 +146,14 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 // console.log('hello');
 
-import _ from 'lodash';
-import $ from 'jquery';
+// import _ from 'lodash';
+// import $ from 'jquery';
+// import { ui } from './jquery.ui';
 
-const dom = $('<div>');
-dom.html(_.join(['rick', 'huang'], '--- '));
-$('body').append(dom);
+// ui();
+
+// const dom = $('<div>');
+// dom.html(_.join(['rick', 'huang'], '--- '));
+// $('body').append(dom);
+
+console.log(this === window);

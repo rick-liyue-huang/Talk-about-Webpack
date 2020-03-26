@@ -1,3 +1,5 @@
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.base.config');
 // 针对生产环境来处理打包后的css文件
 // 它不支持hmr
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -50,4 +52,4 @@ const prodConfig = {
   }
 };
 
-module.exports = prodConfig;
+module.exports = merge(baseConfig, prodConfig);

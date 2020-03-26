@@ -3,11 +3,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
-const devConfig = require('./webpack.dev.config');
-const prodConfig = require('./webpack.prod.config');
 
-const baseConfig = {
+module.exports = {
   entry: {
     // 打包多个文件配置
     main: './src/index.js'
@@ -23,6 +20,17 @@ const baseConfig = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.(png|jpg|gif)$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[name]_[hash].[ext]',
+      //       // 生成到dist下面的images文件夹里
+      //       outputPath: 'images/'
+      //     }
+      //   }
+      // },
       {
         // 测试 es6语法，这只是做了webpack 和 babel的打通，具体的执行需要.babelrc
         test: /\.js$/,
@@ -107,12 +115,4 @@ const baseConfig = {
     // }
   },
   performance: false // 取消打包警告
-};
-
-module.exports = env => {
-  if (env && env.production) {
-    return merge(baseConfig, prodConfig);
-  } else {
-    return merge(baseConfig, devConfig);
-  }
 };

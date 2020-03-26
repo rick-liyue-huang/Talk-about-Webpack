@@ -1,4 +1,6 @@
 const webpack = require('webpack');
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.base.config');
 
 const devConfig = {
   mode: 'development', // production
@@ -48,4 +50,4 @@ const devConfig = {
   }
 };
 
-module.exports = devConfig;
+module.exports = merge(baseConfig, devConfig);

@@ -271,3 +271,25 @@ runtimeChunk: {
   name: 'runtime'
 }
 ```
+
+shimming:
+处理代码兼容
+打包兼容问题
+当一些模块需要引用其他的模块例如 jquery
+需要有垫片 shimming
+
+```
+new webpack.ProvidePlugin({
+  $: 'jquery' // 如果一个模块中使用了$,就帮助引入jquery模块
+})
+```
+
+为了将模块的 this 指向浏览器 window 需要
+
+```
+{
+  loader: 'imports-loader?this=>window'
+}
+```
+
+也可以通过环境变量来区分重写调整 webpack.config 文件的相互引用
