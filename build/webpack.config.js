@@ -43,7 +43,7 @@ module.exports = {
         // 测试 es6语法，这只是做了webpack 和 babel的打通，具体的执行需要.babelrc
         test: /\.js$/,
         exclude: /node_modules/, //忽略第三方模块的es6语法
-        loader: 'babel-loader',
+        use: ['babel-loader', 'eslint-loader'],
         options: {
           // 在 .babelrc文件中
           // 只是业务代码就用presents, 但是会污染全局环境
@@ -133,6 +133,7 @@ module.exports = {
     port: '8000',
     // index: '', // 也可以代理  '/'
     historyApiFallback: true, // [{ from: 'abc.html', to: 'index.html' }], // 处理单页应用, 如果找不到path，就默认挂在到服务器index.html上
+    overlay: true, // 处理打包过程中的eslint问题
     proxy: {
       '/react/api': {
         target: 'http://www.dell-lee.com', // 代理到服务器

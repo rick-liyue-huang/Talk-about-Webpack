@@ -365,3 +365,16 @@ devServer: {
 
 通过 devserver 配置处理 单页应用
 `historyApiFallback: true,`
+
+eslint
+`npx eslint --init`
+`npx eslint src`
+
+```
+test: /\.js$/,
+exclude: /node_modules/, //忽略第三方模块的es6语法
+use: ['babel-loader', 'eslint-loader'],
+```
+
+在生产环境， 在 git 提交代码的时候 使用
+`git eslint src`
