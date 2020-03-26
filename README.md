@@ -329,3 +329,5 @@ if ('serviceWorker' in navigator) {
   });
 }
 ```
+
+针对 typescript 文件进行打包
